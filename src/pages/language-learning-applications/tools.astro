@@ -11,133 +11,113 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <h1>Tools & Resources for Evaluating Language Learning Apps</h1>
     
     <section>
-      <h2>App Evaluation Framework</h2>
-      <p>Use this framework to evaluate language learning apps based on pedagogical soundness and user experience.</p>
-    </section>
-
-    <section>
-      <h2>Evaluation Criteria</h2>
+      <h2>Tool 1: App Scorer — Evaluate Any Language App</h2>
+      <p>Use this scoring framework to objectively evaluate any language learning app before committing time and money to it.</p>
       <div class="tool-box">
-        <h3>Content Quality</h3>
+        <h3>Pedagogy Score (0–40 points)</h3>
         <ul>
-          <li>Vocabulary: Frequency-based, contextually relevant</li>
-          <li>Grammar: Scaffolded progression, clear explanations</li>
-          <li>Authenticity: Real-world language vs. simplified</li>
-          <li>Cultural content: Relevant, respectful representations</li>
+          <li><strong>Spaced repetition system present:</strong> +10 pts</li>
+          <li><strong>Speaking/output exercises included:</strong> +10 pts</li>
+          <li><strong>Immediate corrective feedback:</strong> +10 pts</li>
+          <li><strong>Content uses real-world context (not isolated drills):</strong> +10 pts</li>
         </ul>
-        
-        <h3>Learning Science</h3>
+        <h3>Engagement Score (0–30 points)</h3>
         <ul>
-          <li>Spaced repetition: Evidence-based intervals</li>
-          <li>Multimodal input: Audio, visual, text combinations</li>
-          <li>Output opportunities: Speaking and writing practice</li>
-          <li>Feedback: Immediate, specific, constructive</li>
+          <li><strong>Adaptive difficulty (adjusts to your level):</strong> +10 pts</li>
+          <li><strong>Progress tracking with visible milestones:</strong> +10 pts</li>
+          <li><strong>Social or community features:</strong> +10 pts</li>
         </ul>
-        
-        <h3>User Experience</h3>
+        <h3>Practical Score (0–30 points)</h3>
         <ul>
-          <li>Interface: Intuitive, accessible design</li>
-          <li>Engagement: Motivation maintenance mechanisms</li>
-          <li>Personalization: Adaptive to learner needs</li>
-          <li>Progress tracking: Clear metrics and milestones</li>
+          <li><strong>Offline mode available:</strong> +10 pts</li>
+          <li><strong>No intrusive ads disrupting sessions:</strong> +10 pts</li>
+          <li><strong>Clear privacy policy, no aggressive data selling:</strong> +10 pts</li>
         </ul>
-        
-        <h3>Technical Quality</h3>
-        <ul>
-          <li>Performance: Fast loading, smooth interactions</li>
-          <li>Reliability: Minimal crashes or errors</li>
-          <li>Accessibility: Works on various devices</li>
-          <li>Privacy: Data protection and transparency</li>
-        </ul>
-          <p id="errorExplanation"></p>
-          <p id="slaExplanation"></p>
-          <p id="suggestion"></p>
-        </div>
+        <p><strong>Score 80–100:</strong> Excellent choice. <strong>60–79:</strong> Good with caveats. <strong>Below 60:</strong> Look for alternatives.</p>
       </div>
     </section>
 
     <section>
-      <h2>Tool 2: Learning Condition Matcher</h2>
-      <p>This tool helps you understand your learning context and receive personalized recommendations based on SLA research.</p>
+      <h2>Tool 2: App Finder — Match Goals to App Type</h2>
+      <p>Select your primary learning goal to find the right type of app.</p>
       <div class="tool-box">
-        <h3>How It Works</h3>
-        <p>Answer questions about your learning situation. The tool matches your context to SLA research findings and recommends optimal learning conditions and strategies.</p>
         <div class="tool-input">
-          <label>Your age:</label>
-          <select id="age">
-            <option>Child (under 12)</option>
-            <option>Teenager (12-18)</option>
-            <option selected>Adult (18+)</option>
+          <label for="goal">My primary language learning goal:</label>
+          <select id="goal">
+            <option value="vocab">Build vocabulary fast</option>
+            <option value="speak">Improve speaking and pronunciation</option>
+            <option value="grammar">Master grammar rules</option>
+            <option value="listen">Improve listening comprehension</option>
+            <option value="casual">Casual daily practice, stay consistent</option>
+            <option value="exchange">Find native speakers to practice with</option>
           </select>
-          
-          <label>Time available per week:</label>
-          <select id="time">
-            <option>Less than 5 hours</option>
-            <option selected>5-10 hours</option>
-            <option>10-20 hours</option>
-            <option>20+ hours</option>
-          </select>
-          
-          <label>Learning context:</label>
-          <select id="context">
-            <option>Classroom only</option>
-            <option selected>Classroom + self-study</option>
-            <option>Self-study only</option>
-            <option>Immersion (living in target language country)</option>
-          </select>
-          
-          <button onclick="matchLearningCondition()">Get Recommendations</button>
+          <button onclick="matchApp()">Find My App Type</button>
         </div>
-        <div id="matchResult" class="tool-output" style="display:none;">
-          <h4>Personalized Recommendations</h4>
-          <p id="matchExplanation"></p>
-          <ul id="recommendations"></ul>
+        <div id="appResult" class="tool-output" style="display:none;">
+          <h4>Recommended App Type</h4>
+          <p id="appRecommendation"></p>
+          <p id="appExamples"></p>
         </div>
       </div>
     </section>
 
     <section>
-      <h2>Tool 3: Vocabulary Acquisition Calculator</h2>
-      <p>This tool estimates realistic vocabulary acquisition timelines based on SLA research.</p>
+      <h2>Tool 3: Study Time Calculator</h2>
+      <p>Estimate how long it will take to reach your target proficiency level with consistent daily app use.</p>
       <div class="tool-box">
-        <h3>How It Works</h3>
-        <p>Enter your target vocabulary size and study time. The calculator uses research-based acquisition rates to estimate your timeline.</p>
         <div class="tool-input">
-          <label for="targetVocab">Target vocabulary size (words):</label>
-          <input type="number" id="targetVocab" placeholder="e.g., 2000" value="2000">
-          
-          <label for="hoursPerWeek">Study hours per week:</label>
-          <input type="number" id="hoursPerWeek" placeholder="e.g., 10" value="10">
-          
-          <button onclick="calculateVocabTimeline()">Calculate Timeline</button>
+          <label for="currentLevel">Current level:</label>
+          <select id="currentLevel">
+            <option value="0">Complete beginner (A0)</option>
+            <option value="1">Basic (A1)</option>
+            <option value="2">Elementary (A2)</option>
+            <option value="3">Intermediate (B1)</option>
+            <option value="4">Upper intermediate (B2)</option>
+          </select>
+
+          <label for="targetLevel">Target level:</label>
+          <select id="targetLevel">
+            <option value="1">Basic (A1)</option>
+            <option value="2">Elementary (A2)</option>
+            <option value="3">Intermediate (B1)</option>
+            <option value="4">Upper intermediate (B2)</option>
+            <option value="5">Advanced (C1)</option>
+          </select>
+
+          <label for="dailyMinutes">Minutes per day using the app:</label>
+          <input type="number" id="dailyMinutes" value="20" min="5" max="120">
+
+          <button onclick="calcStudyTime()">Calculate</button>
         </div>
-        <div id="vocabResult" class="tool-output" style="display:none;">
-          <h4>Estimated Timeline</h4>
-          <p id="timelineExplanation"></p>
-          <p id="timelineResult"></p>
-          <p id="timelineNote"></p>
+        <div id="studyResult" class="tool-output" style="display:none;">
+          <h4>Estimated Study Time</h4>
+          <p id="studyEstimate"></p>
+          <p id="studyNote"></p>
         </div>
       </div>
     </section>
 
     <section>
-      <h2>Additional Resources</h2>
+      <h2>Top App Recommendations by Category</h2>
       <ul>
-        <li><strong>SLA Research Journals:</strong> Studies in Second Language Acquisition, TESOL Quarterly, Language Learning</li>
-        <li><strong>Foundational Textbooks:</strong> Ellis (2015), Gass & Mackey (2020), Lightbown & Spada (2013)</li>
-        <li><strong>Online Communities:</strong> TESOL International Association, Applied Linguistics Association</li>
-        <li><strong>Language Learning Platforms:</strong> Apps and websites that incorporate SLA principles (spaced repetition, comprehensible input, interaction)</li>
+        <li><strong>Best for gamification &amp; consistency:</strong> Duolingo — free, streak-based, 40+ languages</li>
+        <li><strong>Best for structured grammar:</strong> Babbel — human-designed lessons, real-world focus</li>
+        <li><strong>Best for vocabulary (spaced repetition):</strong> Anki — fully customizable flashcard decks</li>
+        <li><strong>Best for speaking practice:</strong> iTalki — connects with human tutors and language partners</li>
+        <li><strong>Best for language exchange:</strong> Tandem / HelloTalk — community of millions of native speakers</li>
+        <li><strong>Best for immersive listening:</strong> Lingopie — real TV shows and movies with interactive subtitles</li>
+        <li><strong>Best all-in-one platform:</strong> Busuu — vocabulary, grammar, speaking, and native speaker feedback</li>
       </ul>
     </section>
 
     <section>
       <h2>Exploring Further</h2>
-      <p>For more context on SLA principles:</p>
+      <p>For more context on language learning apps:</p>
       <ul>
-        <li>Review the <a href="/second-language-acquisition-theory/">overview</a> of core concepts</li>
-        <li>Understand <a href="/second-language-acquisition-theory/technical-deep-dive/">cognitive mechanisms</a> behind these tools</li>
-        <li>Explore <a href="/second-language-acquisition-theory/ontology/">detailed terminology</a></li>
-        <li>Address <a href="/second-language-acquisition-theory/challenges/">common learning challenges</a></li>
+        <li>Review the <a href="/language-learning-applications/">overview</a> of app types and principles</li>
+        <li>Understand the <a href="/language-learning-applications/technical-deep-dive/">technical architecture</a> behind these tools</li>
+        <li>Explore <a href="/language-learning-applications/ontology/">detailed terminology</a> in our knowledge base</li>
+        <li>Address <a href="/language-learning-applications/challenges/">common challenges</a> with app-based learning</li>
       </ul>
     </section>
   </article>
