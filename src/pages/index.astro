@@ -1,0 +1,174 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = "Apps for Languages - Language Learning Mobile & Tablet Applications";
+const description = "Comprehensive research on language learning applications, mobile-assisted language learning (MALL), and technology-enhanced instruction for language acquisition.";
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+---
+
+<BaseLayout title={title} description={description} canonicalURL={canonicalURL}>
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Apps for Languages</h1>
+      <p class="tagline">Research-Backed Language Learning Technology</p>
+      <p class="subtitle">Explore evidence-based mobile and tablet applications for language learning, MALL pedagogy, and technology-enhanced instruction.</p>
+    </div>
+  </section>
+
+  <section class="featured-topic">
+    <h2>Featured Topic: Language Learning Mobile & Tablet Applications</h2>
+    <p>Discover how mobile technology transforms language learning. Understand app design principles, MALL pedagogy, and evidence-based practices for effective language acquisition through digital platforms.</p>
+    <div class="pillar-cards">
+      <div class="card">
+        <h3><a href="/language-learning-applications/">Overview</a></h3>
+        <p>Introduction to Mobile-Assisted Language Learning (MALL), app design principles, and how technology supports language acquisition.</p>
+      </div>
+      <div class="card">
+        <h3><a href="/language-learning-applications/history/">History & Evolution</a></h3>
+        <p>Trace the development of language learning apps from early computer-assisted language learning (CALL) through modern AI-powered applications.</p>
+      </div>
+      <div class="card">
+        <h3><a href="/language-learning-applications/technical-deep-dive/">Technical Deep-Dive</a></h3>
+        <p>Explore app architecture, spaced repetition algorithms, speech recognition, and adaptive learning systems in language apps.</p>
+      </div>
+      <div class="card">
+        <h3><a href="/language-learning-applications/ontology/">Ontology & Knowledge Base</a></h3>
+        <p>Comprehensive taxonomy of app types, learning features, assessment methods, and technology-enhanced language learning concepts.</p>
+      </div>
+      <div class="card">
+        <h3><a href="/language-learning-applications/trends/">Current Trends & Future Outlook</a></h3>
+        <p>Emerging technologies: AI tutors, virtual reality immersion, gamification, and personalized learning paths in language apps.</p>
+      </div>
+      <div class="card">
+        <h3><a href="/language-learning-applications/tools/">Tools & Resources</a></h3>
+        <p>App evaluation framework, feature comparison tools, and resources for selecting effective language learning applications.</p>
+      </div>
+      <div class="card">
+        <h3><a href="/language-learning-applications/challenges/">Common Challenges & Solutions</a></h3>
+        <p>Address learner engagement, motivation decline, and technology barriers with evidence-based solutions for app-based learning.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="about">
+    <h2>About This Site</h2>
+    <p>Apps for Languages is dedicated to providing research-backed, comprehensive resources on language learning applications and mobile-assisted language learning. Our content is grounded in MALL pedagogy, technology-enhanced learning research, and practical app evaluation.</p>
+    <p>Whether you're a language learner exploring effective apps, an educator integrating technology into instruction, or a developer creating language learning applications, you'll find evidence-based insights and practical guidance here.</p>
+  </section>
+
+  <style>
+    .hero {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 4rem 2rem;
+      text-align: center;
+      border-radius: 8px;
+      margin-bottom: 3rem;
+    }
+
+    .hero-content h1 {
+      color: white;
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .tagline {
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+      font-weight: 500;
+    }
+
+    .subtitle {
+      font-size: 1.1rem;
+      opacity: 0.95;
+    }
+
+    .featured-topic {
+      margin: 3rem 0;
+    }
+
+    .featured-topic h2 {
+      text-align: center;
+      margin-bottom: 1rem;
+      font-size: 2rem;
+    }
+
+    .featured-topic > p {
+      text-align: center;
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      color: #555;
+    }
+
+    .pillar-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin: 2rem 0;
+    }
+
+    .card {
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 1.5rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+    }
+
+    .card h3 a {
+      color: #667eea;
+    }
+
+    .card h3 a:hover {
+      color: #764ba2;
+      text-decoration: none;
+    }
+
+    .card p {
+      color: #666;
+      font-size: 0.95rem;
+      margin: 0;
+    }
+
+    .about {
+      background: #f0f4ff;
+      padding: 2rem;
+      border-radius: 8px;
+      margin-top: 3rem;
+    }
+
+    .about h2 {
+      color: #667eea;
+    }
+
+    .about p {
+      color: #555;
+      line-height: 1.8;
+    }
+
+    @media (max-width: 768px) {
+      .hero-content h1 {
+        font-size: 1.8rem;
+      }
+
+      .tagline {
+        font-size: 1.1rem;
+      }
+
+      .pillar-cards {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</BaseLayout>
