@@ -8,26 +8,47 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
 <BaseLayout title={title} description={description} canonicalURL={canonicalURL}>
   <article>
-    <h1>Tools & Resources for SLA-Based Learning</h1>
+    <h1>Tools & Resources for Evaluating Language Learning Apps</h1>
     
     <section>
-      <h2>Interactive Learning Tools</h2>
-      <p>The following tools apply Second Language Acquisition theory to practical language learning. Each tool is designed to help learners understand their acquisition process and make informed decisions about their learning strategies.</p>
+      <h2>App Evaluation Framework</h2>
+      <p>Use this framework to evaluate language learning apps based on pedagogical soundness and user experience.</p>
     </section>
 
     <section>
-      <h2>Tool 1: Interlanguage Analyzer</h2>
-      <p>This tool helps learners understand their developing language system and the patterns in their errors.</p>
+      <h2>Evaluation Criteria</h2>
       <div class="tool-box">
-        <h3>How It Works</h3>
-        <p>Enter a sentence you've written or spoken in English. The analyzer identifies errors, explains the underlying SLA principle (overgeneralization, L1 transfer, incomplete learning), and suggests targeted instruction.</p>
-        <div class="tool-input">
-          <label for="sentence">Enter your sentence:</label>
-          <textarea id="sentence" placeholder="e.g., 'He go to school every day'"></textarea>
-          <button onclick="analyzeSentence()">Analyze</button>
-        </div>
-        <div id="analysisResult" class="tool-output" style="display:none;">
-          <h4>Analysis Results</h4>
+        <h3>Content Quality</h3>
+        <ul>
+          <li>Vocabulary: Frequency-based, contextually relevant</li>
+          <li>Grammar: Scaffolded progression, clear explanations</li>
+          <li>Authenticity: Real-world language vs. simplified</li>
+          <li>Cultural content: Relevant, respectful representations</li>
+        </ul>
+        
+        <h3>Learning Science</h3>
+        <ul>
+          <li>Spaced repetition: Evidence-based intervals</li>
+          <li>Multimodal input: Audio, visual, text combinations</li>
+          <li>Output opportunities: Speaking and writing practice</li>
+          <li>Feedback: Immediate, specific, constructive</li>
+        </ul>
+        
+        <h3>User Experience</h3>
+        <ul>
+          <li>Interface: Intuitive, accessible design</li>
+          <li>Engagement: Motivation maintenance mechanisms</li>
+          <li>Personalization: Adaptive to learner needs</li>
+          <li>Progress tracking: Clear metrics and milestones</li>
+        </ul>
+        
+        <h3>Technical Quality</h3>
+        <ul>
+          <li>Performance: Fast loading, smooth interactions</li>
+          <li>Reliability: Minimal crashes or errors</li>
+          <li>Accessibility: Works on various devices</li>
+          <li>Privacy: Data protection and transparency</li>
+        </ul>
           <p id="errorExplanation"></p>
           <p id="slaExplanation"></p>
           <p id="suggestion"></p>
