@@ -1,49 +1,49 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
-const title = "SLA Technical Deep-Dive: Cognitive Mechanisms";
-const description = "Explore the cognitive mechanisms underlying language acquisition: working memory, attention, automaticity, and the role of Universal Grammar.";
+const title = "Language Learning Apps - Technical Deep-Dive";
+const description = "Explore app architecture, algorithms, AI integration, spaced repetition systems, and adaptive learning technologies in language apps.";
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 
 <BaseLayout title={title} description={description} canonicalURL={canonicalURL}>
   <article>
-    <h1>Technical Deep-Dive: Cognitive Mechanisms in SLA</h1>
+    <h1>Technical Deep-Dive: App Architecture & Algorithms</h1>
     
     <section>
-      <h2>Working Memory and Language Processing</h2>
-      <p>Working memory—the cognitive system that temporarily holds and manipulates information—is fundamental to language processing. When learners encounter new language, working memory must hold the sounds or written forms, access meanings from long-term memory, and integrate this information with context.</p>
-      <p>Working memory has limited capacity: typically 4-7 items simultaneously. This constraint explains why complex sentences challenge learners and why breaking input into manageable chunks facilitates comprehension. As learners practice, language processing becomes more automatic, freeing working memory resources for higher-level comprehension and production.</p>
+      <h2>Spaced Repetition Algorithms</h2>
+      <p>Spaced repetition is a learning technique where items are reviewed at increasing intervals. Apps implement sophisticated algorithms (e.g., SM-2, Leitner system variants) that calculate optimal review timing based on forgetting curves. When a user answers correctly, the interval increases; incorrect answers reset the interval.</p>
+      <p>Modern apps use machine learning to personalize spacing intervals based on individual learner performance. The algorithm learns each user's forgetting rate and adjusts intervals accordingly, maximizing retention while minimizing study time.</p>
     </section>
 
     <section>
-      <h2>Attention and Noticing</h2>
-      <p>Attention is selective: we cannot consciously process all available information. In language learning, attention determines what learners notice and potentially acquire. The Noticing Hypothesis proposes that learners must consciously notice a gap between their interlanguage and the target language to progress.</p>
-      <p>This has practical implications: explicit instruction that draws attention to form can facilitate learning, especially for complex structures. However, attention is limited, so instruction must balance attention to form with meaningful communication.</p>
+      <h2>Adaptive Learning Paths</h2>
+      <p>Adaptive systems use learner performance data to personalize content selection and difficulty. Machine learning models predict which content will be most beneficial for each learner based on their history, learning speed, and preferences.</p>
+      <p>Adaptive algorithms adjust difficulty dynamically: if a learner struggles, content becomes easier; if they excel, difficulty increases. This keeps learners in the "zone of proximal development"—challenged but not overwhelmed.</p>
     </section>
 
     <section>
-      <h2>Automaticity and Skill Development</h2>
-      <p>Language use involves both controlled and automatic processes. Beginning learners rely heavily on controlled processing—consciously thinking about grammar rules and vocabulary. With practice, frequently used language becomes automatic, requiring minimal conscious attention.</p>
-      <p>Automaticity develops through repeated, meaningful practice. Learners who engage in extensive reading and listening develop automatic recognition of common patterns. Those who produce language frequently develop automatic production of common phrases and structures. This progression from controlled to automatic processing is essential for fluent communication.</p>
+      <h2>Natural Language Processing for Speech Recognition</h2>
+      <p>Modern apps use NLP and automatic speech recognition (ASR) to evaluate pronunciation. Users speak into their device, and the app compares their pronunciation to native speaker models using acoustic analysis and phonetic matching.</p>
+      <p>Advanced systems provide detailed feedback: identifying specific phonemes mispronounced, comparing pitch and intonation patterns, and suggesting corrections. This enables pronunciation practice without human tutors.</p>
     </section>
 
     <section>
-      <h2>Implicit vs. Explicit Knowledge</h2>
-      <p>Implicit knowledge is unconscious, intuitive understanding of language rules. Native speakers have extensive implicit knowledge: they know that "He go" is incorrect without consciously knowing why. Explicit knowledge is conscious awareness of rules.</p>
-      <p>Research suggests that explicit knowledge can support implicit knowledge development. Explicit instruction can direct attention to forms that learners might otherwise miss, facilitating implicit learning. However, explicit knowledge alone does not guarantee fluent use; learners must develop implicit knowledge through practice.</p>
+      <h2>AI Tutoring Systems</h2>
+      <p>Conversational AI tutors use large language models to provide interactive practice. Users can have conversations with AI, which understands context, corrects errors naturally, and explains grammar. These systems learn from interactions to improve responses.</p>
+      <p>AI tutors scale personalized instruction to millions of users simultaneously, something impossible with human tutors. They're available 24/7, infinitely patient, and adapt to individual learning styles.</p>
     </section>
 
     <section>
-      <h2>Universal Grammar and Language Universals</h2>
-      <p>Noam Chomsky's Universal Grammar theory proposes that humans have innate linguistic knowledge—a universal set of principles underlying all human languages. This explains how children acquire complex grammar with limited input and why certain structures appear across languages.</p>
-      <p>For second language learners, the role of Universal Grammar is debated. Some researchers argue that adult learners can access Universal Grammar, explaining why certain structures are easier to learn than others. Others propose that adult learners rely more on general cognitive abilities and explicit learning. The truth likely involves both: Universal Grammar may provide some guidance, but adult learners also employ general learning mechanisms.</p>
+      <h2>Data Analytics and Learning Science</h2>
+      <p>Apps collect extensive data on learner behavior: time spent, accuracy rates, retry patterns, feature usage. Data scientists analyze this to identify what works for different learner types and optimize the app accordingly.</p>
+      <p>A/B testing allows apps to experiment with new features, comparing outcomes between user groups. This evidence-based approach continuously improves learning effectiveness.</p>
     </section>
 
     <section>
-      <h2>Transfer and Interference</h2>
-      <p>Learners' native language influences second language acquisition. Positive transfer occurs when native language structures facilitate target language learning (e.g., English speakers learning Dutch find many cognates). Negative transfer (interference) occurs when native language structures conflict with target language structures, leading to errors.</p>
-      <p>The degree of transfer depends on language distance: speakers of languages similar to the target language experience more positive transfer. Learners of typologically distant languages face more interference. Understanding transfer helps teachers anticipate learner errors and provide targeted instruction.</p>
+      <h2>Backend Architecture</h2>
+      <p>Language learning apps require robust infrastructure: cloud servers for scalability, databases for user data and content, APIs for third-party integrations, and content delivery networks for fast media streaming globally.</p>
+      <p>Security is critical: user data must be encrypted, authentication systems must be robust, and privacy regulations (GDPR, CCPA) must be respected. Modern apps use microservices architecture for flexibility and reliability.</p>
     </section>
 
     <section>
